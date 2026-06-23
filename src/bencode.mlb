@@ -1,0 +1,9 @@
+(* MLB for the sml-bencode library: the Basis library plus the bencode
+ * encoder/decoder sources. Consumers reference this file.
+ *
+ * The library is standalone -- no external dependencies -- so only the
+ * signature and structure are listed here, brought into scope alongside the
+ * Basis. *)
+$(SML_LIB)/basis/basis.mlb
+bencode.sig
+bencode.sml

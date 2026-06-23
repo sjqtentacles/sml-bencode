@@ -1,0 +1,14 @@
+(* Test executable basis: the bencode library plus the harness, helpers, and
+   per-feature suites. *)
+$(SML_LIB)/basis/basis.mlb
+
+../src/bencode.mlb
+
+harness.sml
+support.sml
+test_decode.sml
+test_encode.sml
+test_roundtrip.sml
+test_malformed.sml
+entry.sml
+main.sml
