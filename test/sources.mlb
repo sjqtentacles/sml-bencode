@@ -2,6 +2,19 @@
    per-feature suites. *)
 $(SML_LIB)/basis/basis.mlb
 
+(* sml-check is a TEST-only dependency: the library itself is
+   dependency-free (see ../src/bencode.mlb), and only test_properties.sml
+   needs it. Include order for the flat Poly/ML `use` model (tools/polybuild):
+   sml-prng -> sml-test (check.sig references Test.test in its toTest
+   bridge) -> sml-check -> our own Harness -> the library under test -> the
+   suite files + entry/main shims. *)
+../lib/github.com/sjqtentacles/sml-prng/prng.sig
+../lib/github.com/sjqtentacles/sml-prng/prng.sml
+../lib/github.com/sjqtentacles/sml-test/test.sig
+../lib/github.com/sjqtentacles/sml-test/test.sml
+../lib/github.com/sjqtentacles/sml-check/check.sig
+../lib/github.com/sjqtentacles/sml-check/check.sml
+
 ../src/bencode.mlb
 
 harness.sml
@@ -10,5 +23,6 @@ test_decode.sml
 test_encode.sml
 test_roundtrip.sml
 test_malformed.sml
+test_properties.sml
 entry.sml
 main.sml

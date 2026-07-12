@@ -6,6 +6,7 @@ fun runAllSuites () =
   ; EncodeTests.run ()
   ; RoundTripTests.run ()
   ; MalformedTests.run ()
+  ; PropertyTests.run ()
   ; Harness.run () )
 
 fun main () =

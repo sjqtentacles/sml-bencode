@@ -1,1 +1,5 @@
 package github.com/sjqtentacles/sml-bencode
+
+require {
+  github.com/sjqtentacles/sml-check
+}
